@@ -4,7 +4,7 @@
   {%- include head.html -%}
 </head>
 <body>
-  <header class="texture-{{ site.vertvert123.style }}">
+  <header class="texture-{{ site.texture.style }}">
     <div class="container">
       {%- include nav.html -%}
     </div>
@@ -17,7 +17,7 @@
       </div>
 
         <!-- Configure Disqus -->
-      {%- if site.vertvert123.disqus_shortname -%}
+      {%- if site.texture.disqus_shortname -%}
         <div id="disqus_thread" style="margin-top:25px"></div>
         <script>
           var disqus_config = function () {
@@ -26,7 +26,7 @@
           };
           (function() {
             var d = document, s = d.createElement('script');
-            s.src = 'https://{{ site.vertvert123.disqus_shortname }}.disqus.com/embed.js';
+            s.src = 'https://{{ site.texture.disqus_shortname }}.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
           })();
