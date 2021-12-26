@@ -15,7 +15,7 @@ sass:
 
 permalink: /posts/:title/
 texture:
-  title: vertvert123
+  title: 
   tagline: Developer. Designer
   date_format: "%b %-d, %Y"
   style: black
