@@ -2,7 +2,7 @@
 layout: post
 title:  "Data Type"
 description: Java에서 쓰는 Data Type들을 알아보자.
-date:   
+date: 2021-12-30 23:10:00  
 categories: Java
 ---
 Java를 공부할때 가장 먼저 알아할 내용은 Data type입니다. 
@@ -26,8 +26,8 @@ public class Date_type {
 ```
 | 자료형 | 크기 | 설명 |
 :---:|:---:|:---:
-| `byte` | 유형(기준) 없음 / 배치 불가능 | `static` |
-| `char` | 요소 자신을 기준으로 배치 |  |
+| `byte` | 1byte (-128~127)| `가장 작은 단위로 8bit로 구성된 1byte를 기본으로 한다.` |
+| `char` | 2byte (0~65535) | `음수를 포함하지 않는 unsigned 자료형으로 문자표현에 적합`  |
 | `short` | 위치 상 부모(조상)요소를 기준으로 배치 |  |
 | `int` | 브라우저 창을 기준으로 배치 |  |
 | `long` | 위치 상 부모(조상)요소를 기준으로 배치 |  |
