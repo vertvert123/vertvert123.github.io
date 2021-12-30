@@ -79,7 +79,7 @@ public class Date_type {
 - 인스턴스 생성없이 `클래스이름.변수명`으로 사용가능합니다.
 <br><br>
 
-### 변수 예시<br>
+## 변수 예시<br>
 
 ```java
 public class Variable {
