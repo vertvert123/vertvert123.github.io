@@ -18,7 +18,7 @@ Java를 공부할때 가장 먼저 알아할 내용은 Data type과 변수입니
 ```
 <br>
 
-### 예시<br>
+### Data type 예시<br>
 
 ```java
 public class Date_type {
@@ -77,6 +77,8 @@ public class Date_type {
 - main 메소드에서 참조가 가능합니다.
 - 인스턴스 생성없이 `클래스이름.변수명`으로 사용가능합니다.
 <br><br>
+
+### 변수 예시<br>
 
 ```Java
 public class Variable {
