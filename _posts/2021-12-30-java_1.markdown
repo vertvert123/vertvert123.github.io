@@ -1,0 +1,37 @@
+---
+layout: post
+title:  "Data Type"
+description: Java에서 쓰는 Data Type들을 알아보자.
+date:   
+categories: Java
+---
+Java를 공부할때 가장 먼저 알아할 내용은 Data type입니다. 
+
+```java
+public class Date_type {
+
+    public static void main(String[] args) {
+        int a =1;
+        float b =4.4f;
+        double c = 2.567;
+        long d = 12341234L; 
+        boolean e = true;
+        char f = 'F';
+
+        String g = "hello world!"; 
+
+        System.out.printf("%d %f %f %d %b %c %s",a,b,c,d,e,f,g);
+    }
+}
+```
+| 자료형 | 크기 | 설명 |
+:---:|:---:|:---:
+| `byte` | 유형(기준) 없음 / 배치 불가능 | `static` |
+| `char` | 요소 자신을 기준으로 배치 |  |
+| `short` | 위치 상 부모(조상)요소를 기준으로 배치 |  |
+| `int` | 브라우저 창을 기준으로 배치 |  |
+| `long` | 위치 상 부모(조상)요소를 기준으로 배치 |  |
+| `double` | 위치 상 부모(조상)요소를 기준으로 배치 |  |
+| `boolean` | 위치 상 부모(조상)요소를 기준으로 배치 |  |
+
+
