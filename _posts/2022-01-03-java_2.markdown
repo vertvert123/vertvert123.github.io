@@ -7,7 +7,6 @@ categories: Java
 ---
 Java를 공부할때 특수문자를 출력해야 할때가 있습니다.<br>
 특수문자마다 앞에 특수문자를 추가로 붙혀줘야 하는 경우가 있으니 표를 보고 정확히 알아가도록 합시다.
-<br>
 
 ### 특수문자 입출력표
 <br>
@@ -37,14 +36,11 @@ Java를 공부할때 특수문자를 출력해야 할때가 있습니다.<br>
 | \0 | 빈 칸 (null)
 
 <br>
-<br>
 
 ### 아래 예시 코드를 실행해보며 특수문자 입출력을 연습해봅시다.
 <br>
 
 ### 특수문자 예시(고양이)
-
-
 ```java
 public class Cat {
 public static void main(String[] args) {
@@ -56,8 +52,6 @@ System.out.print("\\ /\\\n ) ( ')\n( / )\n \\(__)|");
 
 
 ### 특수문자 예시(강아지)
-
-
 ```java
 public class Dog {
 public static void main(String[] args) {
