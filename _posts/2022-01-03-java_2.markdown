@@ -40,7 +40,7 @@ Java를 공부할때 특수문자를 출력해야 할때가 있습니다.<br>
 ### 아래 예시 코드를 실행해보며 특수문자 입출력을 연습해봅시다.
 <br>
 
-### 특수문자 예시(고양이)
+### 특수문자 예시(고양이) 백준 10171번 문제
 ```java
 public class Cat {
 public static void main(String[] args) {
@@ -51,7 +51,7 @@ System.out.print("\\ /\\\n ) ( ')\n( / )\n \\(__)|");
 <br>
 
 
-### 특수문자 예시(강아지)
+### 특수문자 예시(강아지) 백준 10172번 문제
 ```java
 public class Dog {
 public static void main(String[] args) {
