@@ -12,6 +12,7 @@ Java에서 데이터의 입출력을 통해 값을 받고 내보내 줍니다.<b
 
 ### 백준 1000번 문제
 <br>
+
 ```java
 
 import java.util.Scanner;
@@ -45,10 +46,14 @@ Scanner는 1KB 크기의 버퍼를 갖기 때문에 입력이 바로 전달되�
 Scanner보다 속도가 빠르다는 장점이 있으니 코딩테스트때 자주 사용해봅시다.
 
 ### 아래 예시 코드를 실행해보며 데이터 입출력을 연습해봅시다.
+
 <br>
 
 ### 빠른 A+B 백준 15552번 문제
+<br>
+
 ```java
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
