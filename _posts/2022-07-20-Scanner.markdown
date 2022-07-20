@@ -95,8 +95,6 @@ close를 안쓰면 바꿀 수가 없겠죠?
 <br>
 ### 백준 10951번 A+B - 4
 
-<br>
-
 ```java
 import java.util.Scanner;
 
@@ -117,8 +115,7 @@ public class Main {
 ```
 
 <br>
-### 백준 **1000번 문제 A+B**
-<br>
+### 백준 **1000번 문제 A+B
 
 ```java
 import java.util.Scanner;
@@ -142,7 +139,6 @@ public class Num_1000 {
 
 ### 백준 11720번 문제 숫자의 합
 
-<br>
 
 ```java
 import java.util.Scanner;
