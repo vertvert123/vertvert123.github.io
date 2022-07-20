@@ -55,68 +55,121 @@ scan.hasNextInt() // Scanner 객체에 입력값이 int 일 때만 true 값을 �
 
 <br>
 
-### 변수 선언 방법<br>
+char 문자 타입은 따로 없습니다. String으로 값을 받은뒤에 charAt() 메소드를 이용해 문자로 반환하는 방법이 있으니 연습해보는 것을 추천 드립니다.
+
+<br>
+
+
+
+그 외의 메소드도 많이 있으니 공식문서를 읽어 보시거나 구글링 하시는 것을 추천드립니다 ^^
+
+<br>
+
+[https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html)
+
+<br>
+
+### Close( )
+
+<br>
 
 ```java
-[접근제어자] 타입 변수명
+scan.close();
 ```
+
 <br>
-
-## 자바 변수 유형
-프로그램 코드 내에서 변수의 위치에 따라 변수를 구분할 수 있습니다.
-
-
-### `멤버변수`
-- 클래스부에 선언된 변수들로 객체의 속성에 해당합니다.
-- `인스턴스 변수`와 `클래스 변수`로 구분됩니다.
+왜쓰냐? → 사실 코딩테스트 하는 수준에선 close() 를 반드시 해야할 이유는 없습니다. 안해도 잘 돌아가거든요. 
 <br>
+그럼에도 써야하는 이유 → System.in으로 표준입출력을 받고 close를 안해주면 다른 입력값을 못받습니다.
 
-### `인스턴스 변수`
-- 클래스가 인스턴스될때 초기화 되는 변수입니다.
-- 인스턴스를 통해서만 접근할 수 있습니다.
 <br>
-
-### `지역 변수`
-- 메소드 안에서 선언된 변수입니다.
-- 멤버변수와 동일한 이름을 가질수 있습니다.
+OS자원을 돌려줘야 다른 입력을 받으려는 준비가 되기 때문이죠.
 <br>
+Scanner(System.in)으로 TEXT입력 → close → Scanner(new FileInputStream())으로 파일 입력
+<br>
+close를 안쓰면 바꿀 수가 없겠죠? 
+<br>
+예제를 통해 Scanner 객체를 어떻게 쓰는지 알아보도록 합시다.
 
-### `클래스 변수`
-- static으로 선언된 변수입니다.
-- main 메소드에서 참조가 가능합니다.
-- 인스턴스 생성없이 `클래스이름.변수명`으로 사용가능합니다.
-<br><br>
 
-## 변수 예시<br>
+<br>
+### 백준 10951번 A+B - 4
+
+<br>
 
 ```java
-public class Variable {
-    int first;// 멤버변수, 인스턴스 변수
+import java.util.Scanner;
 
-    static int second;//멤버변수, 클래스 변수
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        
+        while(scan.hasNextInt()){
+            int A = scan.nextInt();
+            int B = scan.nextInt();
 
-    public void printName(String name){
-        //지역변수
-        String prtMsg = name + "Hello";
-        System.out.println(prtMsg);
+            System.out.println(A+B);
+        }
+        scan.close();
+    }
+}
+```
+
+<br>
+### 백준 **1000번 문제 A+B**
+<br>
+
+```java
+import java.util.Scanner;
+
+public class Num_1000 {
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        
+        System.out.println(a+b);
+        scan.close();
     }
     
+}
+```
+
+<br>
+
+### 백준 11720번 문제 숫자의 합
+
+<br>
+
+```java
+import java.util.Scanner;
+
+public class Main {
     public static void main(String[] args) {
-        //인스턴스 생성
-        Variable mc = new Variable();
-        //인스턴스 변수 사용
-        mc.first = 100;
-        //클래스 변수사용
-        Variable.second = 50; // b = 50으로 사용해도된다.
+        Scanner scan = new Scanner(System.in);
+        int A = scan.nextInt();
+        int B[] = new int[A];
+        int result = 0;
+        String C = scan.next();
+        String D[] = C.split("");
 
-        mc.printName("vert");
+        for (int i = 0; i < D.length; i++) {
+            B[i] = Integer.parseInt(D[i]);
+        }
 
-        System.out.printf("%d,%d",mc.first,Variable.second);
+        for (int i = 0; i < B.length; i++) {
+            result += B[i];
+        }
+        scan.close();
+        System.out.println(result);
     }
 }
 ```
 
 <br>
 <br>
-<br>
-<br>
+
+
