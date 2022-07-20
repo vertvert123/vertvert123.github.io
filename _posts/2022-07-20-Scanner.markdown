@@ -24,14 +24,11 @@ Scanner scan = new Scanner(System.in);
 ```
 
 <br>
-
 scan 은 임의로 정한 Scanner 객체의 이름이니 각자 원하는 이름으로 써도 상관없습니다.
-
-<br>
 
 System.in 부분은 사용자로 입력받기 위한 입력 스트림 입니다. 
 
-<br><br>
+<br>
 
 
 ## Scanner 클래스의 메소드<br>
