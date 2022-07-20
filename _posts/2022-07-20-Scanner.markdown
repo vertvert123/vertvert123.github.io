@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Scanner"
-description: TEST
+description: Java에서 쓰는 Scanner에 대해 알아보자
 date: 2022-07-20 
 categories: Java
 ---
