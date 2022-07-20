@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Scanner"
+description: TEST
+date: 2022-07-20 
+categories: Java
+---
+
 Java에서 데이터를 입출력할 때 주로 Scanner 클래스를 통해 객체를 생성하여 사용하게 됩니다.
 <br>
 Scanner 클래스를 사용하기 위해 호출해주도록 합시다.
