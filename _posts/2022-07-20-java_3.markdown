@@ -9,9 +9,137 @@ Java에서 데이터를 입출력할 때 주로 Scanner 클래스를 통해 객�
 
 Scanner 클래스를 사용하기 위해 호출해주도록 합시다.
 
+```java
+import java.util.Scanner;
+```
+
+Scanner 객체를 생성 하도록 합시다.
+
+```java
+Scanner scan = new Scanner(System.in);
+```
+
+scan 은 임의로 정한 Scanner 객체의 이름이니 각자 원하는 이름으로 써도 상관없습니다.
+
+[System.in](http://System.in) 부분은 사용자로 입력받기 위한 입력 스트림 입니다. 
+
+## Scanner 클래스의 메소드
+
+```java
+scan.nextByte()     // byte 형 입력 및 리턴
+scan.nextShort()        // short 형 입력 및 리턴
+scan.nextInt()      // int 형 입력 및 리턴
+scan.nextLong()     // long 형 입력 및 리턴
+ 
+scan.nextFloat()        // float 형 입력 및 리턴
+scan.nextDouble()       // double 형 입력 및 리턴
+ 
+scan.nextBoolean()  // boolean 형 입력 및 리턴
+ 
+scan.next()         // String 형 입력 및 리턴 (공백을 기준으로 한 단어를 읽음)
+scan.nextLine()     // String 형 입력 및 리턴 (개행을 기준으로 한 줄을 읽음)
+
+scan.hasNextInt() // Scanner 객체에 입력값이 int 일 때만 true 값을 반환
+```
+
+char 문자 타입은 따로 없습니다. String으로 값을 받은뒤에 charAt() 메소드를 이용해 문자로 반환하는 방법이 있으니 연습해보는 것을 추천 드립니다.
+
+그 외의 메소드도 많이 있으니 공식문서를 읽어 보시거나 구글링 하시는 것을 추천드립니다 ^^
+
+[https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html)
+
+예제를 통해 어떻게 사용하는지 알아보도록 합시다.
+
+### Close( )
+
+```java
+scan.close();
+```
+
+왜쓰냐? → 사실 코딩테스트 하는 수준에선 close() 를 반드시 해야할 이유는 없습니다. 안해도 잘 돌아가거든요. 
+
+그럼에도 써야하는 이유 → System.in으로 표준입출력을 받고 close를 안해주면 다른 입력값을 못받습니다.
+
+OS자원을 돌려줘야 다른 입력을 받으려는 준비가 되기 때문이죠. 
+
+Scanner(System.in)으로 TEXT입력 → close → Scanner(new FileInputStream())으로 파일 입력
+
+close를 안쓰면 바꿀 수가 없겠죠? 
+
+예제를 통해 Scanner 객체를 어떻게 쓰는지 알아보도록 합시다
+
+### 백준 10951번 A+B - 4
+
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        
+        while(scan.hasNextInt()){
+            int A = scan.nextInt();
+            int B = scan.nextInt();
+
+            System.out.println(A+B);
+        }
+        scan.close();
+    }
+}
+```
+
+### 백준 **1000번 문제 A+B**
+
+```java
+import java.util.Scanner;
+
+public class Num_1000 {
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        
+        System.out.println(a+b);
+        scan.close();
+    }
+    
+}
+```
+
+### 백준 11720번 문제 숫자의 합
+
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int A = scan.nextInt();
+        int B[] = new int[A];
+        int result = 0;
+        String C = scan.next();
+        String D[] = C.split("");
+
+        for (int i = 0; i < D.length; i++) {
+            B[i] = Integer.parseInt(D[i]);
+        }
+
+        for (int i = 0; i < B.length; i++) {
+            result += B[i];
+        }
+        scan.close();
+        System.out.println(result);
+    }
+}
+```
+
+<br>
+<br>
+<br>
+<br>
 
 
-<br>
-<br>
-<br>
-<br>
+
