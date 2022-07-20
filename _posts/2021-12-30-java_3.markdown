@@ -1,0 +1,114 @@
+---
+layout: post
+title:  "Scanner"
+description: Java에서 쓰는 Data Type, 변수들을 알아보자.
+date: 2021-12-30 23:10:00  
+categories: Java
+---
+Java를 공부할때 가장 먼저 알아할 내용은 Data type과 변수입니다.
+<br>
+Java에는 여러가지 자료형이 있으며 정해진 크기와 용도가 있습니다.
+<br>
+프로그래밍을 할때 적절한 자료형을 사용하는 것은 매우 중요하므로 제대로 알고 넘어가야 합니다.
+<br><br><br>
+
+| 자료형 | 크기 | 설명 |
+:---:|:---:|:---:
+| `byte` | 1byte (-128~127)| `가장 작은 단위로 8bit로 구성된 1byte를 기본으로 합니다.` |
+| `char` | 2byte (0~65535) | `음수를 포함하지 않는 unsigned 자료형으로 문자표현에 적합합니다.`  |
+| `short` | 2byte (-32768~32767) | `음수를 포함한 2byte 크기의 자료형이다. 작은 데이터 처리에 적합합니다.`  |
+| `int` | 4byte (-2147483648~2147483647) | `정수의 기본자료형이지만 충분한 크기가 아님에 주의할 필요가 있습니다.` |
+| `long` | 8byte (-9223372036854775808 ~ 9223372036854775807) |`충분한 숫자값이 필요한 경우 사용합니다.`  |
+| `float` | 4byte (1.4E-45 ~ 3.4028235E38) |`실수형의 기본형이 아니므로 숫자뒤에 f 를 붙여 사용해야 합니다.`  |
+| `double` | 8byte (4.9E-324 ~ 1.7976931348623157E308) | `실수형의 기본 자료형입니다.` |
+| `boolean` | 1byte, true or false | `논리형으로 참, 거짓을 표현한다.` |
+
+<br><br>
+
+
+## Data type 예시<br>
+
+```java
+public class Date_type {
+
+    public static void main(String[] args) {
+        int a =1;
+        float b =4.4f;
+        double c = 2.567;
+        long d = 12341234L; 
+        boolean e = true;
+        char f = 'F';
+        String g = "hello world!"; 
+
+        System.out.printf("%d %f %f %d %b %c %s",a,b,c,d,e,f,g);
+		// Data type에 따라다르다.
+    }
+}
+```
+<br>
+
+### 변수 선언 방법<br>
+
+```java
+[접근제어자] 타입 변수명
+```
+<br>
+
+## 자바 변수 유형
+프로그램 코드 내에서 변수의 위치에 따라 변수를 구분할 수 있습니다.
+
+
+### `멤버변수`
+- 클래스부에 선언된 변수들로 객체의 속성에 해당합니다.
+- `인스턴스 변수`와 `클래스 변수`로 구분됩니다.
+<br>
+
+### `인스턴스 변수`
+- 클래스가 인스턴스될때 초기화 되는 변수입니다.
+- 인스턴스를 통해서만 접근할 수 있습니다.
+<br>
+
+### `지역 변수`
+- 메소드 안에서 선언된 변수입니다.
+- 멤버변수와 동일한 이름을 가질수 있습니다.
+<br>
+
+### `클래스 변수`
+- static으로 선언된 변수입니다.
+- main 메소드에서 참조가 가능합니다.
+- 인스턴스 생성없이 `클래스이름.변수명`으로 사용가능합니다.
+<br><br>
+
+## 변수 예시<br>
+
+```java
+public class Variable {
+    int first;// 멤버변수, 인스턴스 변수
+
+    static int second;//멤버변수, 클래스 변수
+
+    public void printName(String name){
+        //지역변수
+        String prtMsg = name + "Hello";
+        System.out.println(prtMsg);
+    }
+    
+    public static void main(String[] args) {
+        //인스턴스 생성
+        Variable mc = new Variable();
+        //인스턴스 변수 사용
+        mc.first = 100;
+        //클래스 변수사용
+        Variable.second = 50; // b = 50으로 사용해도된다.
+
+        mc.printName("vert");
+
+        System.out.printf("%d,%d",mc.first,Variable.second);
+    }
+}
+```
+
+<br>
+<br>
+<br>
+<br>
