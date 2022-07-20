@@ -1,50 +1,57 @@
 ---
 layout: post
 title:  "Scanner"
-description: Java에서 쓰는 Data Type, 변수들을 알아보자.
-date: 2021-12-30 23:10:00  
+description: Java에서 쓰는 Scanner에 대해 알아보자
+date: 2022-07-20 10:30:00  
 categories: Java
 ---
-Java를 공부할때 가장 먼저 알아할 내용은 Data type과 변수입니다.
+Java에서 데이터를 입출력할 때 주로 Scanner 클래스를 통해 객체를 생성하여 사용하게 됩니다.
 <br>
-Java에는 여러가지 자료형이 있으며 정해진 크기와 용도가 있습니다.
+Scanner 클래스를 사용하기 위해 호출해주도록 합시다.
 <br>
-프로그래밍을 할때 적절한 자료형을 사용하는 것은 매우 중요하므로 제대로 알고 넘어가야 합니다.
-<br><br><br>
 
-| 자료형 | 크기 | 설명 |
-:---:|:---:|:---:
-| `byte` | 1byte (-128~127)| `가장 작은 단위로 8bit로 구성된 1byte를 기본으로 합니다.` |
-| `char` | 2byte (0~65535) | `음수를 포함하지 않는 unsigned 자료형으로 문자표현에 적합합니다.`  |
-| `short` | 2byte (-32768~32767) | `음수를 포함한 2byte 크기의 자료형이다. 작은 데이터 처리에 적합합니다.`  |
-| `int` | 4byte (-2147483648~2147483647) | `정수의 기본자료형이지만 충분한 크기가 아님에 주의할 필요가 있습니다.` |
-| `long` | 8byte (-9223372036854775808 ~ 9223372036854775807) |`충분한 숫자값이 필요한 경우 사용합니다.`  |
-| `float` | 4byte (1.4E-45 ~ 3.4028235E38) |`실수형의 기본형이 아니므로 숫자뒤에 f 를 붙여 사용해야 합니다.`  |
-| `double` | 8byte (4.9E-324 ~ 1.7976931348623157E308) | `실수형의 기본 자료형입니다.` |
-| `boolean` | 1byte, true or false | `논리형으로 참, 거짓을 표현한다.` |
+```java
+import java.util.Scanner;
+```
+
+<br>
+Scanner 객체를 생성 하도록 합시다.
+<br>
+
+```java
+Scanner scan = new Scanner(System.in);
+```
+
+<br>
+
+scan 은 임의로 정한 Scanner 객체의 이름이니 각자 원하는 이름으로 써도 상관없습니다.
+
+<br>
+
+System.in 부분은 사용자로 입력받기 위한 입력 스트림 입니다. 
 
 <br><br>
 
 
-## Data type 예시<br>
+## Scanner 클래스의 메소드<br>
 
 ```java
-public class Date_type {
+scan.nextByte()		// byte 형 입력 및 리턴
+scan.nextShort()		// short 형 입력 및 리턴
+scan.nextInt()		// int 형 입력 및 리턴
+scan.nextLong()		// long 형 입력 및 리턴
+ 
+scan.nextFloat()		// float 형 입력 및 리턴
+scan.nextDouble()		// double 형 입력 및 리턴
+ 
+scan.nextBoolean()	// boolean 형 입력 및 리턴
+ 
+scan.next()			// String 형 입력 및 리턴	(공백을 기준으로 한 단어를 읽음)
+scan.nextLine()		// String 형 입력 및 리턴 (개행을 기준으로 한 줄을 읽음)
 
-    public static void main(String[] args) {
-        int a =1;
-        float b =4.4f;
-        double c = 2.567;
-        long d = 12341234L; 
-        boolean e = true;
-        char f = 'F';
-        String g = "hello world!"; 
-
-        System.out.printf("%d %f %f %d %b %c %s",a,b,c,d,e,f,g);
-		// Data type에 따라다르다.
-    }
-}
+scan.hasNextInt() // Scanner 객체에 입력값이 int 일 때만 true 값을 반환
 ```
+
 <br>
 
 ### 변수 선언 방법<br>
