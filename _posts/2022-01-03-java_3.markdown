@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Special Characters"
-description: Java에서 특수문자를 입출력 하는법을 알아보자.
-date: 2022-01-03 22:40:00
+title: "Scanner"
+description: Scanner 클래스에 대해 알아보자.
+date: 2022-07-20 10:10:00
 categories: Java
 ---
 Java에서 데이터를 입출력할 때 주로 Scanner 클래스를 통해 객체를 생성하여 사용하게 됩니다.<br>
