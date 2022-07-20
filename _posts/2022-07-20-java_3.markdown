@@ -1,62 +1,138 @@
 ---
 layout: post
-title: "Special Characters"
-description: Java에서 특수문자를 입출력 하는법을 알아보자.
-date: 2022-01-03 22:40:00
+title: "Scanner"
+description: Java에서 사용되는 Scanner 클래스에 대해 알아보자.
+date: 2022-07-20 09:40:00
 categories: Java
 ---
-Java를 공부할때 특수문자를 출력해야 할때가 있습니다.<br>
-특수문자마다 앞에 특수문자를 추가로 붙혀줘야 하는 경우가 있으니 표를 보고 정확히 알아가도록 합시다.
+Java에서 데이터를 입출력할 때 주로 Scanner 클래스를 통해 객체를 생성하여 사용하게 됩니다.
 
-### 특수문자 입출력표
-<br>
+Scanner 클래스를 사용하기 위해 호출해주도록 합시다.
 
-| 입력 | 출력
-|:---:|:---:|
-| \ | 에러
-| \\\ | \
-| \\' | '
-| \\" | "
-| ( | (
-| \\( | 에러
-| / | /
-| \\/ | 에러
-
-<br>
-괄호나 일반 슬래시는 \를 붙히지 않아도 됩니다!
-
-<br>
-
-| 입력 | 출력 |
-:---:|:---:
-| \n | 줄바꿈 (라인 피드)
-| \r | 줄의 맨 처음으로 (캐리지 리턴)
-| \t | 탭
-| \b | 커서를 한문자 앞으로 (백스페이스)
-| \0 | 빈 칸 (null)
-
-<br>
-
-### 아래 예시 코드를 실행해보며 특수문자 입출력을 연습해봅시다.
-<br>
-
-### 특수문자 예시(고양이) 백준 10171번 문제
 ```java
-public class Cat {
-public static void main(String[] args) {
-System.out.print("\\ /\\\n ) ( ')\n( / )\n \\(__)|");
-}
+import java.util.Scanner;
+```
+
+Scanner 객체를 생성 하도록 합시다.
+
+```java
+Scanner scan = new Scanner(System.in);
+```
+
+scan 은 임의로 정한 Scanner 객체의 이름이니 각자 원하는 이름으로 써도 상관없습니다.
+
+(System.in) 부분은 사용자로 입력받기 위한 입력 스트림 입니다. 
+
+## Scanner 클래스의 메소드
+
+```java
+scan.nextByte()		// byte 형 입력 및 리턴
+scan.nextShort()		// short 형 입력 및 리턴
+scan.nextInt()		// int 형 입력 및 리턴
+scan.nextLong()		// long 형 입력 및 리턴
+ 
+scan.nextFloat()		// float 형 입력 및 리턴
+scan.nextDouble()		// double 형 입력 및 리턴
+ 
+scan.nextBoolean()	// boolean 형 입력 및 리턴
+ 
+scan.next()			// String 형 입력 및 리턴	(공백을 기준으로 한 단어를 읽음)
+scan.nextLine()		// String 형 입력 및 리턴 (개행을 기준으로 한 줄을 읽음)
+
+scan.hasNextInt() // Scanner 객체에 입력값이 int 일 때만 true 값을 반환
+```
+
+char 문자 타입은 따로 없습니다. String으로 값을 받은뒤에 charAt() 메소드를 이용해 문자로 반환하는 방법이 있으니 연습해보는 것을 추천 드립니다.
+
+그 외의 메소드도 많이 있으니 공식문서를 읽어 보시거나 구글링 하시는 것을 추천드립니다 ^^
+
+[https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html)
+
+예제를 통해 어떻게 사용하는지 알아보도록 합시다.
+
+### Close( )
+
+```java
+scan.close();
+```
+
+왜쓰냐? → 사실 코딩테스트 하는 수준에선 close() 를 반드시 해야할 이유는 없습니다. 안해도 잘 돌아가거든요. 
+
+그럼에도 써야하는 이유 → System.in으로 표준입출력을 받고 close를 안해주면 다른 입력값을 못받습니다.
+
+OS자원을 돌려줘야 다른 입력을 받으려는 준비가 되기 때문이죠. 
+
+Scanner(System.in)으로 TEXT입력 → close → Scanner(new FileInputStream())으로 파일 입력
+
+close를 안쓰면 바꿀 수가 없겠죠? 
+
+예제를 통해 Scanner 객체를 어떻게 쓰는지 알아보도록 합시다
+
+### 백준 10951번 A+B - 4
+
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        
+        while(scan.hasNextInt()){
+            int A = scan.nextInt();
+            int B = scan.nextInt();
+
+            System.out.println(A+B);
+        }
+        scan.close();
+    }
 }
 ```
-<br>
 
+### 백준 **1000번 문제 A+B**
 
-### 특수문자 예시(강아지) 백준 10172번 문제
 ```java
-public class Dog {
-public static void main(String[] args) {
-System.out.print("|\\_/|\n|q p| /}\n( 0 )\"\"\"\\\n|\"^\"` |\n||_/=\\\\__|");
+import java.util.Scanner;
+
+public class Num_1000 {
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        
+        System.out.println(a+b);
+        scan.close();
+    }
+    
 }
+```
+
+### 백준 11720번 문제 숫자의 합
+
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int A = scan.nextInt();
+        int B[] = new int[A];
+        int result = 0;
+        String C = scan.next();
+        String D[] = C.split("");
+
+        for (int i = 0; i < D.length; i++) {
+            B[i] = Integer.parseInt(D[i]);
+        }
+
+        for (int i = 0; i < B.length; i++) {
+            result += B[i];
+        }
+        scan.close();
+        System.out.println(result);
+    }
 }
 ```
 
