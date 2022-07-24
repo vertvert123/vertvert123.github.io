@@ -171,7 +171,7 @@ public class ConstructorEx{
 }
 ```
 
-## 문자열
+# 문자열
 
 Java 에서 문자열을 나타내는 자료형은 String 입니다.
 
@@ -196,7 +196,7 @@ System.out.println(a == b);  // false 출력
 <br>
 
 ### indexOf
-indexOf는 문자열에서 특정 문자가 시작되는 위치(인덱스)를 리턴한다.
+indexOf는 문자열에서 특정 문자가 시작되는 위치(인덱스)를 리턴합니다.
 
 ```java
 String a = "Hello Java";
@@ -205,12 +205,58 @@ System.out.println(a.indexOf("Java"));  // 6 출력
 <br>
 
 ### contains
-contains는 문자열에서 특정 문자열이 포함되어 있는지의 여부를 리턴한다.
+contains는 문자열에서 특정 문자열이 포함되어 있는지의 여부를 리턴합니다.
 
 ```java
 String a = "Hello Java";
 System.out.println(a.contains("Java"));  // true 출력
 ```
+<br>
+
+### charAt
+charAt은 문자열에서 특정 위치의 문자(char)를 리턴합니다.
+
+```java
+String a = "Hello Java";
+System.out.println(a.charAt(6));  // "J" 출력
+```
+<br>
+
+### replaceAll
+replaceAll은 문자열 중 특정 문자열을 다른 문자열로 바꾸고자 할 때 사용합니다.
+
+```java
+String a = "Hello Java";
+System.out.println(a.charAt(6));  // "J" 출력
+```
+<br>
+
+### substring
+substring은 문자열 중 특정 부분을 뽑아낼 경우에 사용합니다.
+
+```java
+String a = "Hello Java";
+System.out.println(a.substring(0, 4));  // Hell 출력
+```
+<br>
+
+### toUpperCase
+toUpperCase는 문자열을 모두 대문자로 변경할 때 사용합니다.
+
+```java
+String a = "Hello Java";
+System.out.println(a.toUpperCase());  // HELLO JAVA 출력
+```
+<br>
+
+### split
+split 메소드는 문자열을 특정 구분자로 분리하는 메소드입니다..
+
+```java
+String a = "a:b:c:d";
+String[] result = a.split(":");  // result는 {"a", "b", "c", "d"}
+```
+<br>
 <br>
 
 
