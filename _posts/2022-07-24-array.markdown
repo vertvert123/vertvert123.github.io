@@ -2,15 +2,14 @@
 layout: post
 title:  "Array & class"
 description: Java에서 쓰는 Array 와 class에 대해 알아보자.
-date: 2022-07-24 18:00:00  
+date: 2022-07-24  
 categories: Java
 ---
 
-<br>
+
 배열(Array)이란 
-<br>
-프로그래밍을 할때 적절한 자료형을 사용하는 것은 매우 중요하므로 제대로 알고 넘어가야 합니다.
-<br><br><br>
+
+
 
 | 자료형 | 크기 | 설명 |
 :---:|:---:|:---:
