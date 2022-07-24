@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Array & class"
-description: Java에서 쓰는 Array 와 class에 대해 알아보자.
+description: Java에서 쓰는 Array 와 class, String에 대해 알아보자.
 date: 2022-07-24  
 categories: Java
 ---
