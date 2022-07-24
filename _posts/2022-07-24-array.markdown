@@ -7,44 +7,72 @@ categories: Java
 ---
 
 
-배열(Array)이란 
+배열(Array)이란 동일한 자료형의 데이터를 연속된 공간에 저장하기 위한 자료구조입니다.
 
 
+한가지 종류의 변수들을 한번에 적을수 있어 변수의 선언을 줄여주고
+반복문을 이용한 계산에 유리합니다.
 
-| 자료형 | 크기 | 설명 |
-:---:|:---:|:---:
-| `byte` | 1byte (-128~127)| `가장 작은 단위로 8bit로 구성된 1byte를 기본으로 합니다.` |
-| `char` | 2byte (0~65535) | `음수를 포함하지 않는 unsigned 자료형으로 문자표현에 적합합니다.`  |
-| `short` | 2byte (-32768~32767) | `음수를 포함한 2byte 크기의 자료형이다. 작은 데이터 처리에 적합합니다.`  |
-| `int` | 4byte (-2147483648~2147483647) | `정수의 기본자료형이지만 충분한 크기가 아님에 주의할 필요가 있습니다.` |
-| `long` | 8byte (-9223372036854775808 ~ 9223372036854775807) |`충분한 숫자값이 필요한 경우 사용합니다.`  |
-| `float` | 4byte (1.4E-45 ~ 3.4028235E38) |`실수형의 기본형이 아니므로 숫자뒤에 f 를 붙여 사용해야 합니다.`  |
-| `double` | 8byte (4.9E-324 ~ 1.7976931348623157E308) | `실수형의 기본 자료형입니다.` |
-| `boolean` | 1byte, true or false | `논리형으로 참, 거짓을 표현한다.` |
+## 배열을 선언하는 방법
+
+### 자료형[] 변수 = {데이터1, 데이터2, 데이터3, ... };
+<br>
+
+``` java
+String[] English = {"a","b","c"};
+
+```
+
+이 방법은 데이터들의 값을 알고 있을 때 사용하면 편리합니다. 
+
+### 자료형 [] 변수 = new 자료형[배열 크기]
+### 변수 [0] = 데이터 값;
+### 변수 [1] = 데이터 값;
+<br>
+
+```java
+
+int[] numbers = new int[2];
+
+numbers[0] = 1;
+numbers[1] = 2;
+
+```
+
+이 방법은 배열의 값은 모르지만 향후 값을 저장하기 위한 배열을 생성하고 싶은 경우에 주로 사용합니다.
+<br>
+
+```java
+
+Scanner scan = new Scanner(System.in)
+int A = scan.nextInt();
+
+int[] numbers = new int[A];
+
+```
+
+## for each문과 배열
+
+배열을 사용하여 반복 시킬 때 for-each 문을 사용할 수 있다.
+
+```java
+
+public class ForEachEx01 {
+	public static void main(String[] args) {
+		int[] score = { 78, 70, 65, 98, 58 };
+		int sum = 0;
+		for (int i : score) { // 배열의 값이 있으면 자료형 변수로 값을 보내준다.
+			sum += i; // sum = sum + i;
+		}// 값이 없으면 종료
+		System.out.println("점수 합계 : " + sum); // 결과 : 369
+	}
+}
+
+```
 
 <br><br>
 
 
-## Data type 예시<br>
-
-```java
-public class Date_type {
-
-    public static void main(String[] args) {
-        int a =1;
-        float b =4.4f;
-        double c = 2.567;
-        long d = 12341234L; 
-        boolean e = true;
-        char f = 'F';
-        String g = "hello world!"; 
-
-        System.out.printf("%d %f %f %d %b %c %s",a,b,c,d,e,f,g);
-		// Data type에 따라다르다.
-    }
-}
-```
-<br>
 
 ### 변수 선언 방법<br>
 
